@@ -12,6 +12,7 @@ nav {
   line-height: 40px;
   margin: 0;
   width: 100%;
+  display: block;
   overflow: hidden;
 }
 

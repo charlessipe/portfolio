@@ -22,6 +22,10 @@ nav li a {
   padding: 10px;
 }
 
+article {
+  padding: 1em;
+}
+
 figure {
   float: left;
 }

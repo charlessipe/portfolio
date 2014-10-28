@@ -1,0 +1,47 @@
+
+/* ====== Portfolio Stylesheet ===== */
+
+body {
+  margin: 0;
+  font-family: "Raleway", serif;
+}
+
+nav {
+  background-color: #223337;
+  height: 40px;
+  line-height: 40px;
+  margin: 0;
+  width: 100%;
+  overflow: hidden;
+}
+
+nav li {
+  display: inline-block;
+  color: white;
+}
+
+h1, h2, h3 {
+  font-family: Tahoma, "Raleway", serif;	
+}
+
+p {
+  font-family: Tahoma, "Open Sans", serif
+}
+
+figure {
+  float: left;
+}
+
+blockquote {
+  clear: left;
+  background-color: #efefef;
+  padding: 1em;
+  border-left: solid .25em #000;
+}
+
+footer {
+  background-color: #223337;  
+  height: 40px;
+  color: white;
+}
+

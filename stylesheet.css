@@ -8,17 +8,18 @@ body {
 
 nav {
   background-color: #223337;
-  height: 40px;
   line-height: 40px;
   margin: 0;
-  width: 100%;
-  display: inline-block;
   overflow: hidden;
 }
 
 nav li {
   display: inline-block;
   color: white;
+}
+
+nav li a {
+  padding: 10px;
 }
 
 figure {

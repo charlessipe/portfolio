@@ -20,6 +20,8 @@ nav li {
 
 nav li a {
   padding: 10px;
+  color: white;
+  list-style-type: none;
 }
 
 article {

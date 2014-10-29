@@ -4,14 +4,24 @@
 body {
   margin: 0;
   font-family: "Raleway", serif;
+  overflow: hidden;
 }
 
 nav {
   background-color: #223337;
   line-height: 40px;
   margin: 0;
+  width: 100%;
   overflow: hidden;
+  position: absolute;
+  top: 0;
+  opacity: 0.75;
 }
+
+nav ul li {
+  list-style-type: none;
+}
+
 
 nav li {
   display: inline-block;
@@ -26,6 +36,24 @@ nav li a {
 
 article {
   padding: 1em;
+}
+
+.about-photo {
+  float: right;
+}
+
+.main-header {
+  position: absolute;
+  top: 150px;
+  left: 500px;
+}
+
+.about-header {
+  margin-top: 100px;
+}
+
+h1 {
+  text-align: center;
 }
 
 figure {
@@ -46,7 +74,9 @@ footer {
 }
 
 a.link-button {
-  background-color: #000;
-  color: white;
-  height: 20px;
+  background-color: #add136;
+  padding: 13px 32px;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
 }

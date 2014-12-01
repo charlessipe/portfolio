@@ -17,20 +17,20 @@ nav {
   opacity: 0.75;
 }
 
-nav ul li {
-  list-style-type: none;
-}
-
-
 nav li {
   display: inline-block;
   color: white;
+}
+
+nav ul li {
+  list-style-type: none;
 }
 
 nav li a {
   padding: 10px;
   color: white;
   list-style-type: none;
+  text-decoration: none;
 }
 
 article {

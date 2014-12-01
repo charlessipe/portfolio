@@ -79,3 +79,24 @@ a.link-button {
   text-decoration: none;
   border-radius: 5px;
 }
+
+.box {
+  margin: auto;
+  padding: 5px;
+  width: 100px;
+  border-radius: 15px;
+  background: steelblue;
+  cursor: pointer;
+  text-align: center;
+  color: white;
+  -webkit-duration: .9s;
+  -moz-duration: .9s;
+  -o-duration: .9s;
+  transition-duration: .9s;
+ }
+
+.box:hover {
+  background: lightcoral;
+}
+
+

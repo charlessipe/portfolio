@@ -29,6 +29,7 @@
   <h1 class="main-header">Charles Sipe's Portfolio</h1>
 
   <div class="container-fluid">
+  
   <div class="row">
     <div class="col-xs-12">
   <h2> <i class="fa fa-gamepad"></i> Resources for Learning Front-End Development</h2>
@@ -176,8 +177,116 @@
      </div>
 
     </div>
+    
+
+    <div class="row">
+      <div class="col-xs-12">
+      <h2>Key Things to Study</h2>
+      <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+  <div class="panel panel-default">
+    <div class="panel-heading" role="tab" id="headingOne">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+          HTML/CSS
+        </a>
+      </h4>
+    </div>
+    <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+      <div class="panel-body">
+        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+      </div>
+    </div>
+  </div>
+  <div class="panel panel-default">
+    <div class="panel-heading" role="tab" id="headingTwo">
+      <h4 class="panel-title">
+        <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+          Javascript
+        </a>
+      </h4>
+    </div>
+    <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+      <div class="panel-body">
+        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+      </div>
+    </div>
+  </div>
+  <div class="panel panel-default">
+    <div class="panel-heading" role="tab" id="headingThree">
+      <h4 class="panel-title">
+        <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+          jQuery
+        </a>
+      </h4>
+    </div>
+    <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+      <div class="panel-body">
+        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+      </div>
+    </div>
+  </div>
+</div>
+     
+
+    <div class="col-xs-4">
+      <div class="panel panel-info">
+        <div class="panel-heading">
+          <h3 class="panel-title">Front End Podcasts</h3>
+        </div>
+      <div class="panel-body">
+      Shop Talk
+      </div>
+      </div>
+    <a class="btn btn-info">Hide</a>
+    </div>
+
+    <div class="col-xs-4">
+    <form id="frmSupport" name="frmSupport" method="post" action="support_process.htm">
+        <fieldset id="quickSupport">
+          <legend><strong>Request a Free Info Packet</strong></legend>
+          <p> If your request isn't urgent, drop us a quick line and we'll get back to you within 24 hours </p>
+          <p>
+            <label for="name">Name:</label>
+            <input type="text" name="name" id="name" tabindex="10" />
+          </p>
+          <p>
+            <label for="email">Email:</label>
+            <input type="text" value="your email" name="email" id="email" tabindex="20" />
+          </p>
+          <p>
+            <label for="tourID">Tour Name: </label>
+            <input type="text" name="tourID" id="tourID" tabindex="30" />
+          </p>
+          <p>Tour Status:<br />
+            <label class="inline">
+              <input type="radio" name="tourStatus" value="booked" id="tourStatus_0" tabindex="40" />
+              I have booked a tour</label>
+            <label class="inline"><br />
+              <input type="radio" name="tourStatus" value="current" id="tourStatus_1" tabindex="50" />
+              I am on a tour</label>
+          </p>
+          <p>
+            <label for="comments">Comments </label>
+            <br />
+            <textarea name="comments" id="comments" cols="45" rows="5" tabindex="60"></textarea>
+          </p>
+          <p>
+            <input type="submit" name="submit" id="submit" value="Send" tabindex="70" />
+          </p>
+        </fieldset>
+      </form>
+    </div> <!--End form div -->
+
+      </div>
+      </div>
+
+    </div>
+
+    </div>
 
   </div>
+
+
 
 </div>
 
@@ -187,6 +296,16 @@
 </footer>
 
 </body>
+
+<script>
+  $(".btn-info").click(function(){
+  $(".panel-info").hide();
+});
+
+$("#show").click(function(){
+  $("p").show();
+});
+</script>
 
 
 

@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>25 Front-End Development Learning Resources</title>
+  <link rel="stylesheet" href="stylesheet.css">
+  <link href="http://fonts.googleapis.com/css?family=Open+Sans:300italic,300,400italic,400,600italic,600,700italic,700,800italic,800" rel="stylesheet" type="text/css">
+  <link href="http://fonts.googleapis.com/css?family=Raleway:100,200,300,400,500,600,700,800,900" rel="stylesheet" type="text/css">
+  <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+  <!-- Optional: Include the jQuery library -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  <!-- Optional: Incorporate the Bootstrap JavaScript plugins -->
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+  <nav>
+    <ul>
+      <li><a href="/portfolio/">Home</a></li>
+      <li><a href="/portfolio/about-me.html">About Me</a></li>
+      <li><a href="/portfolio/experiments.html">Experiments</a></li>
+    </ul>
+  </nav>
+</head>
+
+<body>
+
+  <img src="http://www.charlessipe.com/wp-content/uploads/2014/10/iceberg.jpeg">
+
+  <h1 class="main-header">Charles Sipe's Portfolio</h1>
+
+  <div class="container-fluid">
+  
+  <div class="row">
+    <div class="col-xs-12">
+      <h2>jQuery Slideshow</h2>
+    </div>
+    <div class="col-xs-12">
+      <div class="container">
+        <div id="slider">
+          <ul class="slides">
+            <li class="slide slide1">slide1</li>
+            <li class="slide slide2">slide2</li>
+            <li class="slide slide3">slide3</li>
+            <li class="slide slide4">slide4</li>
+            <li class="slide slide5">slide5</li>
+            <li class="slide slide1">slide1</li>
+          </ul>
+        </div>
+      </div>
+    Code Source: <a href="http://jsfiddle.net/EjZzs/15/">JSFiddle</a>
+    </div>
+    <div class="col-xs-4">
+    <p>HTML code:</p>
+    <textarea style="width: 90%; height: 300px;">
+         <div class="col-xs-12">
+      <div class="container">
+        <div id="slider">
+          <ul class="slides">
+            <li class="slide slide1">slide1</li>
+            <li class="slide slide2">slide2</li>
+            <li class="slide slide3">slide3</li>
+            <li class="slide slide4">slide4</li>
+            <li class="slide slide5">slide5</li>
+            <li class="slide slide1">slide1</li>
+          </ul>
+        </div>
+      </div>
+    </textarea>
+    </div>
+    <div class="col-xs-4">
+    <p>JavaScript code:</p>
+    <textarea style="width: 90%; height: 300px;">
+    'use strict';
+
+$(function() {
+  //settings for slider
+  var width = 720;
+  var animationSpeed = 1000;
+  var pause = 3000;
+  var currentSlide = 1;
+
+  //cache DOM elements
+  var $slider = $('#slider');
+  var $slideContainer = $('.slides', $slider);
+  var $slides = $('.slide', $slider);
+
+  var interval;
+
+  function startSlider() {
+    interval = setInterval(function() {
+      $slideContainer.animate({'margin-left': '-='+width}, animationSpeed, function(){
+        if (++currentSlide === $slides.length) {
+          currentSlide = 1;
+          $slideContainer.css('margin-left', 0);
+        }
+      });
+    }, pause);
+  }
+
+  function pauseSlider() {
+    clearInterval(interval);
+  }
+
+  $slideContainer
+    .on('mouseenter', pauseSlider)
+    .on('mouseleave', startSlider);
+
+  startSlider();
+
+})  
+    </textarea>
+    </div>
+  </div>
+  <div class="col-xs-4">
+    <p>CSS code:</p>
+    <textarea style="width: 90%; height: 300px;">
+
+#slider {
+  width: 720px;
+  height: 400px;
+  overflow: hidden;
+}
+
+#slider .slides {
+  display: block;
+  width: 6000px;
+  height: 400px;
+  margin: 0;
+  padding: 0;
+}
+
+#slider .slide {
+  float: left;
+  list-style-type: none;
+  width: 720px;
+  height: 400px;
+}
+
+.slide1 {background-image: url("https://ununsplash.imgix.net/photo-1423753623104-718aaace6772?fit=crop&fm=jpg&h=600&q=75&w=1050");}
+.slide2 {background-image: url("https://unsplash.imgix.net/photo-1422513391413-ddd4f2ce3340?fit=crop&fm=jpg&h=700&q=75&w=1050");}
+.slide3 {background-image: url("https://ununsplash.imgix.net/photo-1415302199888-384f752645d0?fit=crop&fm=jpg&h=700&q=75&w=1050");}
+.slide4 {background-image: url("https://unsplash.imgix.net/photo-1414924347000-9823c338079b?fit=crop&fm=jpg&h=700&q=75&w=1050");}
+.slide5 {background-image: url("https://ununsplash.imgix.net/reserve/fawrXCzwSsOUMmJr9GGD_alcatraz.jpg?fit=crop&fm=jpg&h=700&q=75&w=1050");}
+    </textarea>
+  </div>
+</div>
+<br>
+
+<style>
+
+#slider {
+  width: 720px;
+  height: 400px;
+  overflow: hidden;
+}
+
+#slider .slides {
+  display: block;
+  width: 6000px;
+  height: 400px;
+  margin: 0;
+  padding: 0;
+}
+
+#slider .slide {
+  float: left;
+  list-style-type: none;
+  width: 720px;
+  height: 400px;
+}
+
+.slide1 {background-image: url("https://ununsplash.imgix.net/photo-1423753623104-718aaace6772?fit=crop&fm=jpg&h=600&q=75&w=1050");}
+.slide2 {background-image: url("https://unsplash.imgix.net/photo-1422513391413-ddd4f2ce3340?fit=crop&fm=jpg&h=700&q=75&w=1050");}
+.slide3 {background-image: url("https://ununsplash.imgix.net/photo-1415302199888-384f752645d0?fit=crop&fm=jpg&h=700&q=75&w=1050");}
+.slide4 {background-image: url("https://unsplash.imgix.net/photo-1414924347000-9823c338079b?fit=crop&fm=jpg&h=700&q=75&w=1050");}
+.slide5 {background-image: url("https://ununsplash.imgix.net/reserve/fawrXCzwSsOUMmJr9GGD_alcatraz.jpg?fit=crop&fm=jpg&h=700&q=75&w=1050");}
+
+</style>
+
+<script>
+  
+'use strict';
+
+$(function() {
+  //settings for slider
+  var width = 720;
+  var animationSpeed = 1000;
+  var pause = 3000;
+  var currentSlide = 1;
+
+  //cache DOM elements
+  var $slider = $('#slider');
+  var $slideContainer = $('.slides', $slider);
+  var $slides = $('.slide', $slider);
+
+  var interval;
+
+  function startSlider() {
+    interval = setInterval(function() {
+      $slideContainer.animate({'margin-left': '-='+width}, animationSpeed, function(){
+        if (++currentSlide === $slides.length) {
+          currentSlide = 1;
+          $slideContainer.css('margin-left', 0);
+        }
+      });
+    }, pause);
+  }
+
+  function pauseSlider() {
+    clearInterval(interval);
+  }
+
+  $slideContainer
+    .on('mouseenter', pauseSlider)
+    .on('mouseleave', startSlider);
+
+  startSlider();
+
+})  
+
+</script>
+
+
+    <div class="alert alert-info" role="alert">If you have a recommendation, please contact me.</div>
+    </div>
+  </div>
+  
+
+  </div>
+
+
+<footer>
+  <p>Copyright 2014 Charles Sipe</p>
+</footer>
+
+</body>
+
+
+
+
+
+
+

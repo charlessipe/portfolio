@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>25 Front-End Development Learning Resources</title>
+  <link rel="stylesheet" href="stylesheet.css">
+  <link href="http://fonts.googleapis.com/css?family=Open+Sans:300italic,300,400italic,400,600italic,600,700italic,700,800italic,800" rel="stylesheet" type="text/css">
+  <link href="http://fonts.googleapis.com/css?family=Raleway:100,200,300,400,500,600,700,800,900" rel="stylesheet" type="text/css">
+  <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+  <!-- Optional: Include the jQuery library -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  <!-- Optional: Incorporate the Bootstrap JavaScript plugins -->
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+  <nav>
+    <ul>
+      <li><a href="/portfolio/">Home</a></li>
+      <li><a href="/portfolio/about-me.html">About Me</a></li>
+      <li><a href="/portfolio/experiments.html">Experiments</a></li>
+    </ul>
+  </nav>
+</head>
+
+<body>
+
+  <img src="http://www.charlessipe.com/wp-content/uploads/2014/10/iceberg.jpeg">
+
+  <h1 class="main-header">Charles Sipe's Portfolio</h1>
+
+  <div class="container-fluid">
+  
+  <div class="row">
+    <div class="col-xs-12">
+      <h2>Toggle Slide Up</h2>
+    </div>
+    <div class="col-xs-4">
+      <button type="button" class="btn btn-info" id="toggle">Toggle</button><br><br>
+      <img src="https://unsplash.imgix.net/photo-1430132594682-16e1185b17c5" id="image" width="400">
+    </div>
+    <div class="col-xs-4">
+    <p>HTML code:</p>
+    <textarea style="width: 400px; height: 300px;">
+      <button type="button" class="btn btn-info" id="toggle">Toggle</button><br><br>
+      <img src="https://unsplash.imgix.net/photo-1430132594682-16e1185b17c5" id="image" width="400">
+    </textarea>
+    </div>
+    <div class="col-xs-4">
+    <p>JavaScript code:</p>
+    <textarea style="width: 400px; height: 300px;">
+    $(document).ready(function() {
+      $('#toggle').click(function() {
+        $('#image').slideToggle()
+      })
+    });
+    </textarea>
+    </div>
+  </div>
+<br>
+
+<script>
+ 
+ $(document).ready(function() {
+  $('#toggle').click(function() {
+    $('#image').slideToggle()
+  })
+ });
+
+</script>
+
+
+    <div class="alert alert-info" role="alert">If you have a recommendation, please contact me.</div>
+    </div>
+  </div>
+  
+
+  </div>
+
+
+<footer>
+  <p>Copyright 2014 Charles Sipe</p>
+</footer>
+
+</body>
+
+
+
+
+
+
+

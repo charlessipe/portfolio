@@ -55,10 +55,6 @@ h1 {
   text-align: center;
 }
 
-figure {
-  float: left;
-}
-
 blockquote {
   clear: left;
   background-color: #efefef;
@@ -99,4 +95,12 @@ a.link-button {
   background: lightcoral;
 }
 
+.col-md-4 {
+  float: left;
+  padding: 1.2em;
+}
+
+.clearfix {
+  clear: left;
+}
 

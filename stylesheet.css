@@ -37,14 +37,23 @@ article {
   padding: 1em;
 }
 
+.header-image {
+  overflow: hidden;
+  max-width: 100%;
+}
+
 .about-photo {
   float: right;
 }
 
 .main-header {
   position: absolute;
-  top: 150px;
+  top: 125px;
   left: 500px;
+}
+
+.home-row {
+  padding: 0 45px;
 }
 
 .about-header {

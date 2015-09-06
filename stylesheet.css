@@ -46,22 +46,12 @@ article {
   float: right;
 }
 
-.main-header {
-  position: absolute;
-  top: 125px;
-  left: 500px;
-}
-
 .home-row {
   padding: 0 45px;
 }
 
 .about-header {
   margin-top: 100px;
-}
-
-h1 {
-  text-align: center;
 }
 
 blockquote {

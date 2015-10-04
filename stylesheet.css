@@ -4,6 +4,7 @@
 body {
   margin: 0;
   font-family: "Raleway", serif;
+  background-image: url("images/grey_wash_wall.png");
 }
 
 nav {
@@ -14,7 +15,7 @@ nav {
   overflow: hidden;
   position: absolute;
   top: 0;
-  opacity: 0.75;
+  /*opacity: 0.75;*/
 }
 
 nav li {
@@ -35,6 +36,28 @@ nav li a {
 
 article {
   padding: 1em;
+  background-color: white;
+  margin: 0 40px 0 40px;
+}
+
+.circle {
+    display: block;
+    width: 80px;
+    height: 80px;
+    float: right;
+    margin: .25em auto;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    -webkit-border-radius: 99em;
+    -moz-border-radius: 99em;
+    border-radius: 99em;
+    border: 5px solid #eee;
+    box-shadow: 0 3px 2px rgba(0, 0, 0, 0.3);
+}
+
+.intro {
+  margin-top: 80px;
 }
 
 .header-image {

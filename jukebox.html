@@ -55,22 +55,36 @@
     <div class="col-xs-4">
     <p>JavaScript code:</p>
     <textarea style="width: 400px; height: 300px;">
-    
+
     var jukebox = document.querySelector('ul.player');
-jukebox.addEventListener('click', function(e) {
+    jukebox.addEventListener('click', function(e) {
   
-  var songName = e.target.getAttribute('data-src');
-  var songPlaying = document.querySelector('#player');
+    var songName = e.target.getAttribute('data-src');
+    var audioPlayer = document.querySelector('#player');
 
-  if (songPlaying) {
+  if (audioPlayer) {
 
-    if (songPlaying.paused){
-      songPlaying.play();
+    if(songName===audioPlayer.getAttribute('src')) {
+      if (audioPlayer.paused){
+      audioPlayer.play();
       e.target.id = 'playing';
     } else {
-      songPlaying.pause();
+      audioPlayer.pause();
       e.target.id = 'paused';
     }
+
+    } else {
+      audioPlayer.src = songName;
+      audioPlayer.play();
+      if (document.querySelector('#playing')){
+      document.querySelector('#playing').id='';
+      } else {
+        document.querySelector('#paused').id='';
+      }
+      e.target.id = 'playing';
+    }
+
+    
 
   } else {
     var audioPlayer = document.createElement('audio');
@@ -164,17 +178,31 @@ var jukebox = document.querySelector('ul.player');
 jukebox.addEventListener('click', function(e) {
   
   var songName = e.target.getAttribute('data-src');
-  var songPlaying = document.querySelector('#player');
+  var audioPlayer = document.querySelector('#player');
 
-  if (songPlaying) {
+  if (audioPlayer) {
 
-    if (songPlaying.paused){
-      songPlaying.play();
+    if(songName===audioPlayer.getAttribute('src')) {
+      if (audioPlayer.paused){
+      audioPlayer.play();
       e.target.id = 'playing';
     } else {
-      songPlaying.pause();
+      audioPlayer.pause();
       e.target.id = 'paused';
     }
+
+    } else {
+      audioPlayer.src = songName;
+      audioPlayer.play();
+      if (document.querySelector('#playing')){
+      document.querySelector('#playing').id='';
+      } else {
+        document.querySelector('#paused').id='';
+      }
+      e.target.id = 'playing';
+    }
+
+    
 
   } else {
     var audioPlayer = document.createElement('audio');

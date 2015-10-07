@@ -2,7 +2,7 @@
 <html>
 <head>
   <meta charset="utf-8" />
-  <title>25 Front-End Development Learning Resources</title>
+  <title>JavaScript Jukebox Music Player</title>
   <link rel="stylesheet" href="stylesheet.css">
   <link href="http://fonts.googleapis.com/css?family=Open+Sans:300italic,300,400italic,400,600italic,600,700italic,700,800italic,800" rel="stylesheet" type="text/css">
   <link href="http://fonts.googleapis.com/css?family=Raleway:100,200,300,400,500,600,700,800,900" rel="stylesheet" type="text/css">
@@ -24,12 +24,12 @@
 
 <body>
 
-  <img src="http://www.charlessipe.com/wp-content/uploads/2014/10/iceberg.jpeg">
+  
 
-  <h1 class="main-header">Charles Sipe's Portfolio</h1>
+  <h1 class="main-header" style="margin-top: 80px;">Charles Sipe's Portfolio</h1>
+  <h2>JavaScript Jukebox Player</h2>
 
   <div class="container-fluid">
-  
   <div class="row">
     <div class="col-xs-12">
       <ul class="player">
@@ -43,50 +43,155 @@
     <div class="col-xs-4">
     <p>HTML code:</p>
     <textarea style="width: 400px; height: 300px;">
-      <p>Loan Amount: $<input id="amount" type="number" min="1" max="1000000" onchange="computeLoan()"></p>
-      <p>Interest Rate: <input id="interest_rate" type="number" min="0" max="100" value="10" step=".1" onchange="computeLoan()"></p>
-      <p>Months: <input id="months" type="number" min="1" max="72" value="1" step="1" onchange="computeLoan()"></p>
-      <h2 id="payment"></h2>
+      <ul class="player">
+        <li data-src="audio/Phoebex.mp3">Phoebex</li>
+        <li data-src="audio/AmazingLee.mp3">AmazingLee</li>
+        <li data-src="audio/NightKitty.mp3">Night Kitty</li>
+        <li data-src="audio/EqueKenox.mp3">Eque Kenox</li>
+        <li data-src="audio/Shiloah.mp3">Shiloah</li>
+      </ul>
     </textarea>
     </div>
     <div class="col-xs-4">
     <p>JavaScript code:</p>
     <textarea style="width: 400px; height: 300px;">
-    function computeLoan(){
-      var amount = document.getElementById('amount').value;
-      var interest_rate = document.getElementById('interest_rate').value;
-      var months = document.getElementById('months').value;
-      var interest = (amount * (interest_rate * .01)) / months;
-      var payment = ((amount / months) + interest).toFixed(2);
-      payment = payment.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-      document.getElementById('payment').innerHTML = "Monthly Payment = $"+payment;
+    
+    var jukebox = document.querySelector('ul.player');
+jukebox.addEventListener('click', function(e) {
+  
+  var songName = e.target.getAttribute('data-src');
+  var songPlaying = document.querySelector('#player');
+
+  if (songPlaying) {
+
+    if (songPlaying.paused){
+      songPlaying.play();
+      e.target.id = 'playing';
+    } else {
+      songPlaying.pause();
+      e.target.id = 'paused';
     }
+
+  } else {
+    var audioPlayer = document.createElement('audio');
+    audioPlayer.id = 'player';
+    e.target.id = 'playing';
+    audioPlayer.src = songName;
+    document.body.appendChild(audioPlayer);
+    audioPlayer.play();
+
+  }
+
+  audioPlayer.addEventListener('ended', function() {
+    audioPlayer.parentNode.removeChild(audioPlayer);
+    e.target.id='';
+  }, false);
+}, false);
+
+
+
     </textarea>
     </div>
   </div>
 <br>
 
-<script>
-  /*function computeLoan() {
-    var amount = document.getElementById('amount').value;
-    var interest_rate = document.getElementById('interest_rate').value;
-    var months = document.getElementById('months').value;
-    var interest = (amount * (interest_rate * .01)) / months;
-    var payment = ((amount / months)) + interest).toFixed(2);
-    payment = payment.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-    document.getElementById('payment').innerHTML = "Monthly Payment = $" +payment;
-  }
-  */
 
-  function computeLoan(){
-    var amount = document.getElementById('amount').value;
-    var interest_rate = document.getElementById('interest_rate').value;
-    var months = document.getElementById('months').value;
-    var interest = (amount * (interest_rate * .01)) / months;
-    var payment = ((amount / months) + interest).toFixed(2);
-    payment = payment.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-    document.getElementById('payment').innerHTML = "Monthly Payment = $"+payment;
+
+<style media="screen" type="text/css">
+
+body {
+  font: normal 15px/15px Helvetica;
+  background: #259286;
+  background: #39add1;
 }
+
+ul.player {
+  width: 180px;
+  margin: 0 0 0 100px;
+  list-style: none;
+}
+
+ul.player li {
+  border-bottom: 1px solid #999;
+  color: #444;
+  padding: 9px 5px 10px 40px;
+  background: url(images/media_btn.png) no-repeat 8px 7px;
+  background-color: #EAE3CB;
+  background-position: 9px 4px;
+  cursor: pointer;
+}
+
+ul.player li:first-child {
+  -webkit-border-top-left-radius: 10px;
+  -webkit-border-top-right-radius: 10px;
+  border-top: none;
+}
+
+ul.player li:last-child {
+  -webkit-border-bottom-left-radius: 10px;
+  -webkit-border-bottom-right-radius: 10px;
+  border-bottom: none;
+}
+
+ul.player li:hover {
+  background-color: #475B62;
+  color: #FCF4DC;
+}
+
+ul.player li#playing {
+  background: url(images/media_play_btn.png) no-repeat 8px 7px;
+  background-color: #FCF4DC;
+  color: #2176C7;
+  font-weight: bold;
+  background-position: 9px 4px;
+}
+
+ul.player li#paused {
+  background: url(images/media_pause_btn.png) no-repeat 8px 7px;
+  background-color: #666;
+  color: #FFF;
+  font-weight: bold;
+  background-position: 9px 4px;
+}
+
+
+</style>
+
+
+<script>
+
+var jukebox = document.querySelector('ul.player');
+jukebox.addEventListener('click', function(e) {
+  
+  var songName = e.target.getAttribute('data-src');
+  var songPlaying = document.querySelector('#player');
+
+  if (songPlaying) {
+
+    if (songPlaying.paused){
+      songPlaying.play();
+      e.target.id = 'playing';
+    } else {
+      songPlaying.pause();
+      e.target.id = 'paused';
+    }
+
+  } else {
+    var audioPlayer = document.createElement('audio');
+    audioPlayer.id = 'player';
+    e.target.id = 'playing';
+    audioPlayer.src = songName;
+    document.body.appendChild(audioPlayer);
+    audioPlayer.play();
+
+  }
+
+  audioPlayer.addEventListener('ended', function() {
+    audioPlayer.parentNode.removeChild(audioPlayer);
+    e.target.id='';
+  }, false);
+}, false);
+
 
 </script>
 

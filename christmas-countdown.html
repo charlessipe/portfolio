@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>jQuery Christmas Countdown</title>
+  <link rel="stylesheet" href="stylesheet.css">
+  <link href="http://fonts.googleapis.com/css?family=Open+Sans:300italic,300,400italic,400,600italic,600,700italic,700,800italic,800" rel="stylesheet" type="text/css">
+  <link href="http://fonts.googleapis.com/css?family=Raleway:100,200,300,400,500,600,700,800,900" rel="stylesheet" type="text/css">
+  <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+  <!-- Include the jQuery library -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  <!-- Incorporate the Bootstrap JavaScript plugins -->
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+  <!-- The Final Countdown jQuery Plugin -->
+  <script src="scripts/jquery.countdown.js"></script>
+  <nav>
+    <ul>
+      <li><a href="/portfolio/">Home</a></li>
+      <li><a href="/portfolio/about-me.html">About Me</a></li>
+      <li><a href="/portfolio/experiments.html">Experiments</a></li>
+    </ul>
+  </nav>
+</head>
+
+<body>
+
+  
+
+  <h1 class="main-header" style="margin-top: 80px;">Charles Sipe's Portfolio</h1>
+  <h2>jQuery Christmas Countdown</h2>
+
+  <div class="container-fluid">
+  <div class="row">
+    <div class="col-xs-12">
+
+      <div id="getting-started"></div>
+         <script type="text/javascript">
+           $("#getting-started")
+           .countdown("2015/12/25", function(event) {
+             $(this).text(
+               event.strftime('%D days %H hours %M minutes %S seconds')
+             );
+           });
+         </script>
+      </div>
+
+    <div class="col-xs-4">
+    <p>HTML code:</p>
+    <textarea style="width: 98%; height: 300px;">
+      <div id="getting-started"></div>
+    </textarea>
+    </div>
+
+    <div class="col-xs-4">
+    <p>JavaScript code:</p>
+    <textarea style="width: 98%; height: 300px;">
+      <script type="text/javascript">
+           $("#getting-started")
+           .countdown("2015/12/25", function(event) {
+             $(this).text(
+               event.strftime('%D days %H hours %M minutes %S seconds')
+             );
+           });
+         </script>
+    </textarea>
+    </div>
+
+    <div class="col-xs-4">
+    <p>CSS code:</p>
+    <textarea style="width: 98%; height: 300px;">
+      <div id="getting-started"></div>
+    </textarea>
+    </div>
+
+  </div>
+<br>
+
+
+
+<style media="screen" type="text/css">
+
+body {
+  font: normal 15px/15px Helvetica;
+  background: #259286;
+  background: #39add1;
+}
+
+.getting-started {
+  font-size: 55px;
+}
+
+
+
+</style>
+
+
+<script>
+
+var jukebox = document.querySelector('ul.player');
+jukebox.addEventListener('click', function(e) {
+  
+  var songName = e.target.getAttribute('data-src');
+  var audioPlayer = document.querySelector('#player');
+
+  if (audioPlayer) {
+
+    if(songName===audioPlayer.getAttribute('src')) {
+      if (audioPlayer.paused){
+      audioPlayer.play();
+      e.target.id = 'playing';
+    } else {
+      audioPlayer.pause();
+      e.target.id = 'paused';
+    }
+
+    } else {
+      audioPlayer.src = songName;
+      audioPlayer.play();
+      if (document.querySelector('#playing')){
+      document.querySelector('#playing').id='';
+      } else {
+        document.querySelector('#paused').id='';
+      }
+      e.target.id = 'playing';
+    }
+
+    
+
+  } else {
+    var audioPlayer = document.createElement('audio');
+    audioPlayer.id = 'player';
+    e.target.id = 'playing';
+    audioPlayer.src = songName;
+    document.body.appendChild(audioPlayer);
+    audioPlayer.play();
+
+  }
+
+  audioPlayer.addEventListener('ended', function() {
+    audioPlayer.parentNode.removeChild(audioPlayer);
+    e.target.id='';
+  }, false);
+}, false);
+
+
+</script>
+
+
+    <div class="alert alert-info" role="alert">If you have a recommendation, please contact me.</div>
+    </div>
+  </div>
+  
+
+  </div>
+
+
+<footer>
+  <p>Copyright 2014 Charles Sipe</p>
+</footer>
+
+</body>
+
+
+
+
+
+
+

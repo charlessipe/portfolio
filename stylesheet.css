@@ -128,9 +128,31 @@ a.link-button {
 .project-img {
   float: left;
   padding: 1.2em;
+  width: 25%;
 }
 
 .clearfix {
   clear: left;
 }
+
+@media (max-width: 800px) {
+  .project-img {
+    display: none;
+  }
+
+  .hide-mobile {
+    display: none;
+  }
+  .hide-large {
+    display: block;
+  }
+}
+
+@media (min-width: 801px) {
+  .hide-large {
+    display: none;
+  }
+}
+
+
 

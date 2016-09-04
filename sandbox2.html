@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Sandbox #2</title>
+  <link rel="stylesheet" href="stylesheet.css">
+  <link href="http://fonts.googleapis.com/css?family=Open+Sans:300italic,300,400italic,400,600italic,600,700italic,700,800italic,800" rel="stylesheet" type="text/css">
+  <link href="http://fonts.googleapis.com/css?family=Raleway:100,200,300,400,500,600,700,800,900" rel="stylesheet" type="text/css">
+  <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+  <!-- Optional: Include the jQuery library -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  <!-- Optional: Incorporate the Bootstrap JavaScript plugins -->
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+  <nav>
+    <ul>
+      <li><a href="/portfolio/">Home</a></li>
+      <li><a href="/portfolio/about-me.html">About Me</a></li>
+      <li><a href="/portfolio/experiments.html">Experiments</a></li>
+    </ul>
+  </nav>
+</head>
+
+<body>
+
+  <div class="container-fluid">
+  <div class="row evernote-clone">
+    <h2>EVERNOTE TIP 32 #EvernoteTips</h2>
+    <p>Save all your important documents in Evernote and have them wherever you go.</p>
+
+    <p>GET MORE SPACE WITH EVERNOTE PREMIUM</p>
+  </div>
+
+  <h1 class="main-header" style="margin-top: 80px;">Charles Sipe's Portfolio</h1>
+  <h2>Sandbox</h2>
+
+  <div class="row commerce-header">
+    <div class="brand-container">
+    <h1 class="brandname">Brandname</h1>
+    </div>
+  </div>
+
+  <div class="container-fluid">
+  <div class="row">
+    <div class="col-xs-12">
+      <ul class="player">
+        <li data-src="audio/Phoebex.mp3">Phoebex</li>
+        <li data-src="audio/AmazingLee.mp3">AmazingLee</li>
+        <li data-src="audio/NightKitty.mp3">Night Kitty</li>
+        <li data-src="audio/EqueKenox.mp3">Eque Kenox</li>
+        <li data-src="audio/Shiloah.mp3">Shiloah</li>
+      </ul>
+    </div>
+    <div class="col-xs-4">
+    <p>HTML code:</p>
+    <textarea style="width: 400px; height: 300px;">
+      <ul class="player">
+        <li data-src="audio/Phoebex.mp3">Phoebex</li>
+        <li data-src="audio/AmazingLee.mp3">AmazingLee</li>
+        <li data-src="audio/NightKitty.mp3">Night Kitty</li>
+        <li data-src="audio/EqueKenox.mp3">Eque Kenox</li>
+        <li data-src="audio/Shiloah.mp3">Shiloah</li>
+      </ul>
+    </textarea>
+    </div>
+    <div class="col-xs-4">
+    <p>JavaScript code:</p>
+    <textarea style="width: 400px; height: 300px;">
+
+    var jukebox = document.querySelector('ul.player');
+    jukebox.addEventListener('click', function(e) {
+  
+    var songName = e.target.getAttribute('data-src');
+    var audioPlayer = document.querySelector('#player');
+
+  if (audioPlayer) {
+
+    if(songName===audioPlayer.getAttribute('src')) {
+      if (audioPlayer.paused){
+      audioPlayer.play();
+      e.target.id = 'playing';
+    } else {
+      audioPlayer.pause();
+      e.target.id = 'paused';
+    }
+
+    } else {
+      audioPlayer.src = songName;
+      audioPlayer.play();
+      if (document.querySelector('#playing')){
+      document.querySelector('#playing').id='';
+      } else {
+        document.querySelector('#paused').id='';
+      }
+      e.target.id = 'playing';
+    }
+
+    
+
+  } else {
+    var audioPlayer = document.createElement('audio');
+    audioPlayer.id = 'player';
+    e.target.id = 'playing';
+    audioPlayer.src = songName;
+    document.body.appendChild(audioPlayer);
+    audioPlayer.play();
+
+  }
+
+  audioPlayer.addEventListener('ended', function() {
+    audioPlayer.parentNode.removeChild(audioPlayer);
+    e.target.id='';
+  }, false);
+}, false);
+
+
+
+    </textarea>
+    </div>
+  </div>
+<br>
+
+
+
+<style media="screen" type="text/css">
+
+body {
+  font: normal 15px/15px Helvetica;
+  background: #259286;
+  background: #39add1;
+}
+
+.evernote-clone {
+  padding: 70px;
+  height: 400px;
+  background-color: #2FACB2;
+  color: white;
+}
+
+.commerce-header {
+  height: 80px;
+  background-color: #c14800;
+  margin-bottom: 20px;
+}
+
+.commerce-header h1 {
+  position: absolute;
+  left: 50px;
+  color: white;
+  background-color: #ef672f;
+  height: 50px;
+  padding: 10px;
+}
+
+ul.player {
+  width: 180px;
+  margin: 0 0 0 100px;
+  list-style: none;
+}
+
+ul.player li {
+  border-bottom: 1px solid #999;
+  color: #444;
+  padding: 9px 5px 10px 40px;
+  background: url(images/media_btn.png) no-repeat 8px 7px;
+  background-color: #EAE3CB;
+  background-position: 9px 4px;
+  cursor: pointer;
+}
+
+ul.player li:first-child {
+  -webkit-border-top-left-radius: 10px;
+  -webkit-border-top-right-radius: 10px;
+  border-top: none;
+}
+
+ul.player li:last-child {
+  -webkit-border-bottom-left-radius: 10px;
+  -webkit-border-bottom-right-radius: 10px;
+  border-bottom: none;
+}
+
+ul.player li:hover {
+  background-color: #475B62;
+  color: #FCF4DC;
+}
+
+ul.player li#playing {
+  background: url(images/media_play_btn.png) no-repeat 8px 7px;
+  background-color: #FCF4DC;
+  color: #2176C7;
+  font-weight: bold;
+  background-position: 9px 4px;
+}
+
+ul.player li#paused {
+  background: url(images/media_pause_btn.png) no-repeat 8px 7px;
+  background-color: #666;
+  color: #FFF;
+  font-weight: bold;
+  background-position: 9px 4px;
+}
+
+
+</style>
+
+
+<script>
+
+var jukebox = document.querySelector('ul.player');
+jukebox.addEventListener('click', function(e) {
+  
+  var songName = e.target.getAttribute('data-src');
+  var audioPlayer = document.querySelector('#player');
+
+  if (audioPlayer) {
+
+    if(songName===audioPlayer.getAttribute('src')) {
+      if (audioPlayer.paused){
+      audioPlayer.play();
+      e.target.id = 'playing';
+    } else {
+      audioPlayer.pause();
+      e.target.id = 'paused';
+    }
+
+    } else {
+      audioPlayer.src = songName;
+      audioPlayer.play();
+      if (document.querySelector('#playing')){
+      document.querySelector('#playing').id='';
+      } else {
+        document.querySelector('#paused').id='';
+      }
+      e.target.id = 'playing';
+    }
+
+    
+
+  } else {
+    var audioPlayer = document.createElement('audio');
+    audioPlayer.id = 'player';
+    e.target.id = 'playing';
+    audioPlayer.src = songName;
+    document.body.appendChild(audioPlayer);
+    audioPlayer.play();
+
+  }
+
+  audioPlayer.addEventListener('ended', function() {
+    audioPlayer.parentNode.removeChild(audioPlayer);
+    e.target.id='';
+  }, false);
+}, false);
+
+
+</script>
+
+
+    <div class="alert alert-info" role="alert">If you have a recommendation, please contact me.</div>
+    </div>
+  </div>
+  
+
+  </div>
+
+
+<footer>
+  <p>Copyright 2014 Charles Sipe</p>
+</footer>
+
+</body>
+
+
+
+
+
+
+
